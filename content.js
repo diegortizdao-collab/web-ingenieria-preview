@@ -106,8 +106,12 @@ window.SITE = {
   },
 
   socios: [
-    { nombre: "Javier Cantero", cargo: "Socio fundador · Ingeniero de procesos", linkedin: "" },          // completar link de LinkedIn
-    { nombre: "[Nombre y apellido]", cargo: "Socio fundador", linkedin: "" }                               // EJEMPLO — completar
+    { nombre: "Martin Martucci", cargo: "Socio fundador", foto: "img/socio-martin.jpg",
+      linkedin: "https://www.linkedin.com/company/jm-soluciones-de-ingenieria/people/" }, // reemplazar por el link personal
+    { nombre: "Javier Cantero", cargo: "Socio fundador · Diseño mecánico e ingeniería de procesos", foto: "img/socio-javier.jpg",
+      frase: "De la idea al plano: dispositivos y proyectos industriales que funcionan.",
+      skills: ["SolidWorks", "AutoCAD", "Inventor"],
+      linkedin: "https://www.linkedin.com/company/jm-soluciones-de-ingenieria/people/" }  // reemplazar por el link personal
   ],
 
   contacto: {

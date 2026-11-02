@@ -109,7 +109,9 @@
     var link = s.linkedin
       ? '<a class="btn btn-ghost" href="' + esc(s.linkedin) + '" target="_blank" rel="noopener">Ver perfil en LinkedIn</a>'
       : '<span class="pending">Perfil de LinkedIn a cargar</span>';
-    return '<article class="founder"><div class="avatar">' + foto + '</div><h3>' + esc(s.nombre) + '</h3><p>' + esc(s.cargo) + "</p>" + link + "</article>";
+    var frase = s.frase ? '<p class="frase">' + esc(s.frase) + "</p>" : "";
+    var sk = s.skills ? '<ul class="tags sk">' + s.skills.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>" : "";
+    return '<article class="founder"><div class="avatar">' + foto + '</div><h3>' + esc(s.nombre) + '</h3><p>' + esc(s.cargo) + "</p>" + frase + sk + link + "</article>";
   }).join("");
 
   // ---------- Contacto ----------
