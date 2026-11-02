@@ -39,6 +39,18 @@ window.SITE = {
     rubros: ["Manufactura industrial", "Automotriz y autopartes", "Alimentos y bebidas", "Logística y almacenes"]
   },
 
+  clientes: {
+    titulo: "Confían en nosotros",
+    texto: "Empresas de distintos sectores que ya confían en nuestro trabajo de ingeniería y fabricación.",
+    nota: "Estas son solo algunas de las empresas que ya confían en nosotros. Diseñamos y fabricamos soluciones a medida para distintos sectores industriales.",
+    lista: [
+      { nombre: "Arauco", sector: "Forestal · celulosa", logo: "img/cliente-arauco.png" },
+      { nombre: "OPmobility", sector: "Movilidad y autopartes", logo: "img/cliente-opmobility.png" },
+      { nombre: "Agrometal", sector: "Maquinaria agrícola", logo: "img/cliente-agrometal.png" },
+      { nombre: "Planta Textil", sector: "Sector textil · Argentina", logo: "img/cliente-planta-textil.png" }
+    ]
+  },
+
   servicios: [
     { icono: "design",   titulo: "Diseño e ingeniería metalúrgica", texto: "Piezas, dispositivos y equipos a medida, desde el diagnóstico hasta el plano de fabricación." },
     { icono: "karakuri", titulo: "Dispositivos industriales", texto: "Soluciones para necesidades específicas de cada planta: elevadores, escaleras y mecanismos karakuri." },

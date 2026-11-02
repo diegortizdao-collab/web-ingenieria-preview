@@ -33,6 +33,15 @@
   $("rubros").innerHTML = S.hero.rubros.map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("");
   if (S.preview) $("preview-band").hidden = false;
 
+  // ---------- Confían en nosotros ----------
+  var CL = S.clientes;
+  $("trust-title").textContent = CL.titulo;
+  $("trust-text").textContent = CL.texto;
+  $("trust-note").textContent = CL.nota;
+  $("logos").innerHTML = CL.lista.map(function (c) {
+    return '<li><div class="logo-card"><img src="' + esc(c.logo) + '" alt="' + esc(c.nombre) + '" loading="lazy"></div><span>' + esc(c.sector) + "</span></li>";
+  }).join("");
+
   // ---------- Servicios ----------
   $("servicios-grid").innerHTML = S.servicios.map(function (s) {
     return '<article class="card"><div class="ico">' + icon(s.icono) + "</div><h3>" + esc(s.titulo) + "</h3><p>" + esc(s.texto) + "</p></article>";
