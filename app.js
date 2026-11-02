@@ -17,7 +17,7 @@
   var RUBRO_ICON = { "Estanterías": "rack", "Escaleras": "stairs", "Elevadores": "lift", "Karakuri": "karakuri" };
 
   // Marca y cabecera
-  document.title = S.marca.nombre + " · " + S.marca.cargo;
+  document.title = S.marca.nombre + " · Estanterías, escaleras y karakuri";
   $("brand-name").textContent = S.marca.nombre;
   $("foot-brand").textContent = S.marca.nombre + " · " + S.marca.ciudad;
   $("hero-eyebrow").textContent = S.hero.eyebrow;
@@ -63,7 +63,7 @@
   $("about-title").textContent = S.sobreMi.titulo;
   $("about-text").innerHTML = S.sobreMi.parrafos.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("");
   $("about-tags").innerHTML = S.sobreMi.puntos.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
-  $("pc-name").textContent = S.marca.nombre;
+  $("pc-name").textContent = S.marca.persona;
   $("pc-role").textContent = S.marca.cargo;
   $("pc-linkedin").href = S.marca.linkedin;
 

@@ -6,10 +6,11 @@ window.SITE = {
   preview: true, // false = oculta la cinta "vista previa"
 
   marca: {
-    nombre: "Javier [Apellido]",
+    nombre: "JM Soluciones de Ingeniería",
+    persona: "Javier [Apellido]", // EJEMPLO — completar apellido,
     cargo: "Ingeniero de Procesos",
     firma: "Estanterías, escaleras, elevadores y karakuri para la industria",
-    linkedin: "https://www.linkedin.com/in/usuario-ejemplo/", // EJEMPLO
+    linkedin: "https://www.linkedin.com/company/jm-soluciones-de-ingenieria/",
     whatsapp: "5491100000000",                                // EJEMPLO
     email: "contacto@dominio-ejemplo.com.ar",                 // EJEMPLO
     ciudad: "Buenos Aires, Argentina"
