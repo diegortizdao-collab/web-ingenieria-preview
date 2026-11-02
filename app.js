@@ -140,6 +140,10 @@
     window.open("https://wa.me/" + S.marca.whatsapp + "?text=" + encodeURIComponent(txt), "_blank", "noopener");
   });
 
+  // ---------- Barra de acción móvil ----------
+  $("cta-wa").href = "https://wa.me/" + S.marca.whatsapp + "?text=" + encodeURIComponent("Hola, quiero consultar por un proyecto.");
+  $("cta-tel").href = "tel:+" + S.marca.whatsapp;
+
   // ---------- Pie ----------
   $("foot-credit").textContent = S.credito.texto;
   $("foot-tel").textContent = S.credito.telefono;
