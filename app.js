@@ -88,7 +88,8 @@
 
   // Tema
   var root = document.documentElement;
-  try { var t = localStorage.getItem("tema"); if (t) root.setAttribute("data-theme", t); } catch (e) {}
+  var t = null; try { t = localStorage.getItem("tema"); } catch (e) {}
+  root.setAttribute("data-theme", t || "dark");
   $("theme-toggle").addEventListener("click", function () {
     var oscuro = root.getAttribute("data-theme") === "dark" ||
       (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);

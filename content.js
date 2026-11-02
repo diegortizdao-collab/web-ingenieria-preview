@@ -7,7 +7,7 @@ window.SITE = {
 
   marca: {
     nombre: "JM Soluciones de Ingeniería",
-    persona: "Javier [Apellido]", // EJEMPLO — completar apellido,
+    persona: "Javier Cantero",
     cargo: "Ingeniero de Procesos",
     firma: "Estanterías, escaleras, elevadores y karakuri para la industria",
     linkedin: "https://www.linkedin.com/company/jm-soluciones-de-ingenieria/",
