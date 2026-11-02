@@ -1,80 +1,113 @@
 /* ============================================================
    CONTENIDO DEL SITIO — único archivo a editar.
-   Todo lo marcado "EJEMPLO" es provisorio para la previsualización.
+   Textos de empresa: tomados del "Acerca de" de LinkedIn.
+   Lo marcado "EJEMPLO" es provisorio para la previsualización.
    ============================================================ */
 window.SITE = {
   preview: true, // false = oculta la cinta "vista previa"
 
   marca: {
     nombre: "JM Soluciones de Ingeniería",
-    persona: "Javier Cantero",
-    cargo: "Ingeniero de Procesos",
-    firma: "Estanterías, escaleras, elevadores y karakuri para la industria",
+    subtitulo: "Diseño, Ingeniería y Metalúrgica",
     linkedin: "https://www.linkedin.com/company/jm-soluciones-de-ingenieria/",
-    whatsapp: "5491100000000",                                // EJEMPLO
-    email: "contacto@dominio-ejemplo.com.ar",                 // EJEMPLO
+    whatsapp: "5491157519735",
+    telefono: "11 5751-9735",
+    email: "solucionesing.jm@gmail.com",
     ciudad: "Buenos Aires, Argentina"
-  },
-
-  hero: {
-    eyebrow: "Ingeniería de procesos · Herrería de proyectos",
-    titulo: "Almacenar, subir y mover. Resuelto a medida.",
-    bajada: "Diseño y fabricación de estanterías, escaleras, elevadores y mecanismos karakuri para que tu planta mueva material con menos esfuerzo, menos tiempo y más seguridad.",
-    cta1: "Pedir presupuesto",
-    cta2: "Ver proyectos",
-    stats: [ // EJEMPLO
-      { valor: "15+", etiqueta: "años en industria" },
-      { valor: "120", etiqueta: "proyectos entregados" },
-      { valor: "48 h", etiqueta: "respuesta a consultas" }
-    ]
   },
 
   menu: [ // orden de las pestañas; "inicio" siempre va primero
     { id: "inicio",    label: "Inicio",    desc: "" },
-    { id: "servicios", label: "Servicios", desc: "Estanterías, escaleras, elevadores y karakuri." },
+    { id: "servicios", label: "Servicios", desc: "Diseño, dispositivos, transporte, mesas y utillaje." },
     { id: "proyectos", label: "Proyectos", desc: "Trabajos realizados, filtrados por rubro." },
-    { id: "proceso",   label: "Proceso",   desc: "De la visita a planta al montaje." },
-    { id: "perfil",    label: "Perfil",    desc: "Quién está detrás de cada proyecto." },
-    { id: "contacto",  label: "Contacto",  desc: "Contanos qué necesitás y te respondemos." }
+    { id: "proceso",   label: "Proceso",   desc: "Del diagnóstico a la fabricación." },
+    { id: "nosotros",  label: "Nosotros",  desc: "Quiénes somos y quiénes están detrás." },
+    { id: "contacto",  label: "Contacto",  desc: "Contanos qué necesitás." }
   ],
+
+  hero: {
+    eyebrow: "Diseño · Ingeniería · Metalúrgica",
+    titulo: "Ingeniería que se fabrica a medida.",
+    bajada: "Acompañamos tu proyecto de punta a punta: diagnóstico, diseño, simulación y fabricación en taller propio.",
+    cta1: "Solicitar servicios",
+    cta2: "Ver proyectos",
+    stats: [
+      { valor: "Punta a punta", etiqueta: "diagnóstico a fabricación" },
+      { valor: "Taller propio", etiqueta: "con control de calidad" },
+      { valor: "100 %", etiqueta: "en tu proyecto" }
+    ],
+    rubros: ["Manufactura industrial", "Automotriz y autopartes", "Alimentos y bebidas", "Logística y almacenes"]
+  },
 
   servicios: [
-    { icono: "rack",    titulo: "Estanterías industriales", texto: "Racks y estanterías a medida para piezas, matrices y materia prima, con carga calculada y señalización de capacidad." },
-    { icono: "stairs",  titulo: "Escaleras y pasarelas", texto: "Escaleras, plataformas y barandas dimensionadas según norma, para acceder a máquinas y entrepisos con seguridad." },
-    { icono: "lift",    titulo: "Elevadores y plataformas", texto: "Elevadores de carga y mesas elevadoras que eliminan el levantamiento manual en el puesto de trabajo." },
-    { icono: "karakuri", titulo: "Karakuri", texto: "Mecanismos de automatización de bajo costo, sin electricidad: gravedad, palancas y levas que mueven el material por vos." },
-    { icono: "layout",  titulo: "Ingeniería de procesos", texto: "Relevamiento, layout y balance de línea para decidir qué fabricar antes de cortar el primer perfil." },
-    { icono: "check",   titulo: "Documentación técnica", texto: "Planos, memorias de cálculo y manuales de uso listos para auditorías de calidad y seguridad." }
+    { icono: "design",   titulo: "Diseño e ingeniería metalúrgica", texto: "Piezas, dispositivos y equipos a medida, desde el diagnóstico hasta el plano de fabricación." },
+    { icono: "karakuri", titulo: "Dispositivos industriales", texto: "Soluciones para necesidades específicas de cada planta: elevadores, escaleras y mecanismos karakuri." },
+    { icono: "conveyor", titulo: "Transporte y manipulación", texto: "Cintas transportadoras, carros, racks y estanterías para mover y almacenar material." },
+    { icono: "table",    titulo: "Mesas de trabajo a medida", texto: "Diseñadas según tu proceso y el espacio disponible en planta." },
+    { icono: "jig",      titulo: "Máquinas herramienta, jigs y hangers", texto: "Utillaje y equipos de sujeción para líneas de producción." },
+    { icono: "check",    titulo: "Fabricación metalmecánica", texto: "Fabricación bajo especificación técnica, con control de calidad." }
   ],
 
-  proyectos: [ // Los dos primeros son reales (fotos/planos). Los demás son EJEMPLO.
-    { titulo: "Carro de transporte con soporte inclinado", rubro: "Herrería", anio: "", dato: "Plano con cotas 900 / 500 mm", imagen: "img/carro-plano.jpg", ajuste: "contain" },
-    { titulo: "Bastidor inclinado con soportes", rubro: "Estanterías", anio: "", dato: "Estructura en perfil tubular", imagen: "img/bastidor-inclinado.jpg" },
-    { titulo: "Karakuri de alimentación por gravedad", rubro: "Karakuri", anio: "2025", dato: "Sin energía eléctrica", imagen: "" },
-    { titulo: "Escalera con plataforma de servicio", rubro: "Escaleras", anio: "2024", dato: "Norma IRAM 4004", imagen: "" },
-    { titulo: "Elevador de bobinas", rubro: "Elevadores", anio: "2024", dato: "Capacidad 500 kg", imagen: "" },
-    { titulo: "Estantería dinámica FIFO", rubro: "Estanterías", anio: "2024", dato: "−40 % de búsqueda", imagen: "" }
+  especialidades: ["Diseño 3D", "Diseño de ingeniería", "Diseño industrial", "Gestión de proyectos"],
+
+  proyectos: [ // Los primeros son reales (planos, fotos y renders). Los marcados EJEMPLO son provisorios.
+    {
+      titulo: "Pórtico industrial de 10 toneladas", rubro: "Estructuras", anio: "", dato: "Del diseño al montaje final",
+      imagen: "img/portico-planta.jpg",
+      imagenes: [
+        { src: "img/portico-planta.jpg", alt: "Pórtico instalado en planta" },
+        { src: "img/portico-simulacion.jpg", alt: "Simulación de desplazamientos de la estructura (UX, mm)" },
+        { src: "img/portico-modelo3d.jpg", alt: "Modelo 3D con numeración de elementos" }
+      ],
+      detalle: [
+        "Pórtico industrial para 10 toneladas, desarrollado especialmente para las necesidades de la planta.",
+        "Desde la idea inicial hasta el diseño técnico, memoria de cálculo, planos y el montaje final, el proyecto se llevó adelante trabajando en conjunto con otros proveedores, logrando una solución sólida, segura y totalmente adaptada al proceso productivo."
+      ]
+    },
+    { titulo: "Carro de transporte con soporte inclinado", rubro: "Transporte", anio: "", dato: "Plano con cotas 900 / 500 mm", imagen: "img/carro-plano.jpg", ajuste: "contain" },
+    { titulo: "Bastidor inclinado con soportes", rubro: "Racks", anio: "", dato: "Estructura en perfil tubular", imagen: "img/bastidor-inclinado.jpg" },
+    { titulo: "Carro de manipulación con pinzas", rubro: "Transporte", anio: "", dato: "Del diseño a la fabricación", imagen: "img/carro-pinzas.jpg" },
+    { titulo: "Dispositivo de izaje con pinzas", rubro: "Utillaje", anio: "", dato: "Fabricado en taller propio", imagen: "img/izaje-pinzas.jpg", posicion: "50% 85%" },
+    { titulo: "Medios apilables para traslado de piezas", rubro: "Transporte", anio: "", dato: "Con o sin ruedas · rubro automotriz", imagen: "img/medio-apilable.jpg",
+      detalle: ["Medios apilables con o sin ruedas para el traslado de partes o piezas en el rubro automotriz."] },
+    { titulo: "Sistema de transporte de 7 m con altura regulable", rubro: "Transporte", anio: "", dato: "Cajas pesadas · rubro logístico", imagen: "img/transportador-7m.jpg",
+      detalle: ["Sistema de transporte de 7 metros con altura regulable en un extremo, para cajas pesadas, diseñado para el rubro logístico."] },
+    { titulo: "Mesa de trabajo a medida", rubro: "Mesas", anio: "2025", dato: "EJEMPLO", imagen: "" },
+    { titulo: "Jig de sujeción para línea", rubro: "Utillaje", anio: "2024", dato: "EJEMPLO", imagen: "" },
+    { titulo: "Karakuri de alimentación por gravedad", rubro: "Karakuri", anio: "2024", dato: "EJEMPLO", imagen: "" }
   ],
 
   proceso: [
-    { titulo: "Relevamiento", texto: "Visita a planta, medición del flujo de material y definición del alcance con criterios de aceptación claros." },
-    { titulo: "Ingeniería", texto: "Cálculo, planos de fabricación y cronograma aprobado antes de empezar a fabricar." },
-    { titulo: "Fabricación", texto: "Control dimensional en cada etapa y registro fotográfico del avance." },
-    { titulo: "Montaje", texto: "Instalación coordinada con tu producción y entrega con documentación completa." }
+    { titulo: "Diagnóstico", texto: "Relevamos tu planta, el proceso y el espacio disponible para definir qué se necesita." },
+    { titulo: "Diseño", texto: "Ingeniería metalúrgica de la pieza, dispositivo o equipo a medida." },
+    { titulo: "Simulación", texto: "Validamos el diseño antes de fabricar." },
+    { titulo: "Fabricación", texto: "Producción en taller propio, bajo especificación técnica y con control de calidad." }
   ],
 
-  sobreMi: {
-    titulo: "Ingeniería con las manos en la planta",
+  nosotros: {
+    titulo: "Quiénes somos",
     parrafos: [
-      "Soy ingeniero de procesos y trabajo con empresas industriales que necesitan resolver un problema concreto de almacenaje, acceso o movimiento de material con una solución construida a medida.",
-      "Combino el análisis del proceso con la fabricación en taller, para que lo que se diseña sea lo que se monta y funciona."
+      "En JM – Diseño, Ingeniería y Metalúrgica acompañamos tu proyecto de punta a punta: diagnóstico, diseño, simulación y fabricación en taller propio.",
+      "Trabajamos para distintos rubros y para cualquier industria que necesite ingeniería y fabricación a medida."
     ],
-    puntos: ["Ingeniería de procesos", "Cálculo y diseño estructural", "Fabricación y montaje", "Karakuri y Lean"]
+    porqueTitulo: "Por qué elegirnos",
+    porque: [
+      "Ingeniería orientada a fabricación",
+      "Producción propia con control de calidad",
+      "Comunicación directa con quien diseña y fabrica tu proyecto",
+      "Equipo ágil y enfocado, con foco 100 % en tu proyecto"
+    ],
+    sociosTitulo: "Socios fundadores"
   },
 
+  socios: [
+    { nombre: "Javier Cantero", cargo: "Socio fundador · Ingeniero de procesos", linkedin: "" },          // completar link de LinkedIn
+    { nombre: "[Nombre y apellido]", cargo: "Socio fundador", linkedin: "" }                               // EJEMPLO — completar
+  ],
+
   contacto: {
-    titulo: "Contame qué necesitás",
-    texto: "Describí brevemente el proyecto y te respondo con los próximos pasos."
+    titulo: "Contanos qué necesitás",
+    texto: "Describí brevemente el proyecto y te respondemos con los próximos pasos."
   },
 
   credito: {

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JM Soluciones de Ingeniería</title>
-<meta name="description" content="Estanterías, escaleras, elevadores y karakuri para la industria. Ingeniería de procesos y herrería de proyectos a escala.">
+<meta name="description" content="Diseño, ingeniería y metalúrgica. Dispositivos industriales, transporte y manipulación, mesas de trabajo, jigs y fabricación metalmecánica a medida.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
 
 <header class="site-head">
   <div class="wrap head-in">
-    <a class="brandmark" href="#inicio"><span class="mark" aria-hidden="true"></span><span id="brand-name"></span></a>
+    <a class="brandmark" href="#inicio"><img class="logo" src="img/logo-jm.png" alt="" width="44" height="44"><span id="brand-name"></span></a>
     <nav class="tabs" id="tabs" aria-label="Secciones"></nav>
     <button id="theme-toggle" class="icon-btn" type="button" aria-label="Cambiar tema">◐</button>
   </div>
@@ -37,27 +37,42 @@
           <div class="stat-row" id="hero-stats"></div>
         </div>
         <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 420 340" class="blueprint">
-          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
-            <path d="M40 300H380" opacity=".5"/>
-            <path d="M90 300V50M330 300V50"/>
-            <path d="M90 110H330M90 190H330M90 270H330"/>
-            <path d="M90 50L330 110M330 50L90 110" opacity=".35"/>
-            <path d="M110 110V80H170V110M200 110V70H260V110M280 190V150H320V190M110 190V160H190V190M130 270V230H230V270" opacity=".75"/>
-          </g>
-          <g class="nodes"><circle cx="90" cy="50" r="6"/><circle cx="330" cy="50" r="6"/><circle cx="90" cy="300" r="6"/><circle cx="330" cy="300" r="6"/></g>
-          <g class="dims" font-family="IBM Plex Mono, monospace" font-size="12">
-            <path d="M90 322H330" stroke-width="1"/>
-            <path d="M90 316V328M330 316V328" stroke-width="1"/>
-            <text x="210" y="338" text-anchor="middle">2.400 mm</text>
-            <path d="M366 50V300" stroke-width="1"/>
-            <path d="M360 50H372M360 300H372" stroke-width="1"/>
-            <text x="376" y="180" transform="rotate(90 376 180)" text-anchor="middle">4.500 mm</text>
-          </g>
-        </svg>
+          <svg viewBox="0 0 520 380" class="blueprint" role="img" aria-label="Ilustración de planta con rack, cinta transportadora y carro">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path class="d" pathLength="1" d="M16 320H504" opacity=".55"/>
+              <!-- rack -->
+              <path class="d" pathLength="1" d="M36 110V320M126 110V320"/>
+              <path class="d" pathLength="1" d="M36 170H126M36 238H126M36 306H126" opacity=".85"/>
+              <path class="d" pathLength="1" d="M48 170V146H78V170M92 238V204H120V238M48 306V274H84V306" opacity=".75"/>
+              <!-- cinta transportadora -->
+              <path class="d" pathLength="1" d="M168 248H404V260H168Z"/>
+              <path class="d" pathLength="1" d="M190 260V320M382 260V320M286 260V320" opacity=".8"/>
+              <g class="rollers" opacity=".9">
+                <circle cx="182" cy="241" r="5"/><circle cx="212" cy="241" r="5"/><circle cx="242" cy="241" r="5"/><circle cx="272" cy="241" r="5"/><circle cx="302" cy="241" r="5"/><circle cx="332" cy="241" r="5"/><circle cx="362" cy="241" r="5"/><circle cx="392" cy="241" r="5"/>
+              </g>
+              <!-- carro -->
+              <path class="d" pathLength="1" d="M424 288H504V298H424Z"/>
+              <path class="d" pathLength="1" d="M430 288V214M422 214H440"/>
+              <circle cx="440" cy="310" r="10"/><circle cx="488" cy="310" r="10"/>
+              <path class="d" pathLength="1" d="M448 288V262H492V288" opacity=".75"/>
+            </g>
+            <g class="carry"><rect x="176" y="206" width="38" height="28" rx="2" class="box"/><path d="M176 220H214" stroke="currentColor" stroke-width="1.5"/></g>
+            <g transform="translate(452 112)"><g class="gear">
+              <circle r="26" fill="none" stroke="currentColor" stroke-width="9" stroke-dasharray="7.2 7.2" opacity=".55"/>
+              <circle r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle r="6" class="hub"/>
+            </g></g>
+            <g class="nodes"><circle cx="168" cy="254" r="5"/><circle cx="404" cy="254" r="5"/><circle cx="36" cy="320" r="5"/><circle cx="126" cy="320" r="5"/></g>
+            <g class="dims" font-family="IBM Plex Mono, monospace" font-size="12">
+              <path d="M168 346H404" stroke-width="1"/>
+              <path d="M168 340V352M404 340V352" stroke-width="1"/>
+              <text x="286" y="368" text-anchor="middle">3.200 mm</text>
+            </g>
+          </svg>
         </div>
       </div>
     </div>
+    <div class="rubros-band"><div class="wrap"><p class="rubros-label">Trabajamos para</p><ul class="rubros" id="rubros"></ul></div></div>
     <div class="wrap home-links">
       <p class="eyebrow">Explorar</p>
       <div class="grid access" id="access-grid"></div>
@@ -69,6 +84,11 @@
       <p class="eyebrow">Servicios</p>
       <h2>Lo que resuelvo en planta</h2>
       <div class="grid cards" id="servicios-grid"></div>
+      <div class="spec">
+        <h3 class="sub">Especialidades</h3>
+        <ul class="tags" id="espec"></ul>
+        <p class="spec-note" id="spec-note"></p>
+      </div>
     </div>
   </section>
 
@@ -89,20 +109,23 @@
     </div>
   </section>
 
-  <section class="view" id="v-perfil" tabindex="-1" aria-label="Perfil">
-    <div class="wrap page about">
-      <div>
-        <p class="eyebrow">Perfil</p>
-        <h2 id="about-title"></h2>
-        <div id="about-text" class="about-text"></div>
-        <ul class="tags" id="about-tags"></ul>
+  <section class="view" id="v-nosotros" tabindex="-1" aria-label="Nosotros">
+    <div class="wrap page">
+      <p class="eyebrow">Nosotros</p>
+      <h2 id="nos-title"></h2>
+      <div class="about">
+        <div>
+          <div id="nos-text" class="about-text"></div>
+          <h3 class="sub" id="porque-title"></h3>
+          <ul class="checks" id="porque-list"></ul>
+        </div>
+        <aside class="rubros-card">
+          <p class="eyebrow">Rubros</p>
+          <ul class="tags" id="nos-rubros"></ul>
+        </aside>
       </div>
-      <aside class="profile-card">
-        <div class="avatar" aria-hidden="true"></div>
-        <p class="pc-name" id="pc-name"></p>
-        <p class="pc-role" id="pc-role"></p>
-        <a class="btn btn-ghost" id="pc-linkedin" href="#" target="_blank" rel="noopener">Ver perfil en LinkedIn</a>
-      </aside>
+      <h3 class="sub founders-title" id="socios-title"></h3>
+      <div class="founders" id="socios"></div>
     </div>
   </section>
 
@@ -127,6 +150,17 @@
     </div>
   </section>
 </main>
+
+<dialog id="proj-dialog" class="dlg" aria-label="Detalle del proyecto">
+  <div class="dlg-in">
+    <button class="dlg-close" id="dlg-close" type="button" aria-label="Cerrar">×</button>
+    <figure class="dlg-fig"><img id="dlg-img" src="" alt=""><figcaption id="dlg-cap"></figcaption></figure>
+    <div class="dlg-thumbs" id="dlg-thumbs"></div>
+    <p class="eyebrow" id="dlg-rubro"></p>
+    <h3 id="dlg-title"></h3>
+    <div class="dlg-text" id="dlg-text"></div>
+  </div>
+</dialog>
 
 <footer class="footer">
   <div class="wrap footer-in">
