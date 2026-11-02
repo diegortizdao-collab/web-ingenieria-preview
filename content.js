@@ -50,7 +50,7 @@ window.SITE = {
 
   especialidades: ["Diseño 3D", "Diseño de ingeniería", "Diseño industrial", "Gestión de proyectos"],
 
-  proyectos: [ // Los primeros son reales (planos, fotos y renders). Los marcados EJEMPLO son provisorios.
+  proyectos: [ // Reales: planos, fotos y renders de LinkedIn. Solo el Karakuri es EJEMPLO.
     {
       titulo: "Pórtico industrial de 10 toneladas", rubro: "Estructuras", anio: "", dato: "Del diseño al montaje final",
       imagen: "img/portico-planta.jpg",
@@ -67,13 +67,16 @@ window.SITE = {
     { titulo: "Carro de transporte con soporte inclinado", rubro: "Transporte", anio: "", dato: "Plano con cotas 900 / 500 mm", imagen: "img/carro-plano.jpg", ajuste: "contain" },
     { titulo: "Bastidor inclinado con soportes", rubro: "Racks", anio: "", dato: "Estructura en perfil tubular", imagen: "img/bastidor-inclinado.jpg" },
     { titulo: "Carro de manipulación con pinzas", rubro: "Transporte", anio: "", dato: "Del diseño a la fabricación", imagen: "img/carro-pinzas.jpg" },
-    { titulo: "Dispositivo de izaje con pinzas", rubro: "Utillaje", anio: "", dato: "Fabricado en taller propio", imagen: "img/izaje-pinzas.jpg", posicion: "50% 85%" },
+    { titulo: "Dispositivo de izaje con pinzas", rubro: "Utillaje", anio: "", dato: "Fabricado en taller propio", imagen: "img/izaje-pinzas.jpg", posicion: "50% 80%" },
     { titulo: "Medios apilables para traslado de piezas", rubro: "Transporte", anio: "", dato: "Con o sin ruedas · rubro automotriz", imagen: "img/medio-apilable.jpg",
       detalle: ["Medios apilables con o sin ruedas para el traslado de partes o piezas en el rubro automotriz."] },
     { titulo: "Sistema de transporte de 7 m con altura regulable", rubro: "Transporte", anio: "", dato: "Cajas pesadas · rubro logístico", imagen: "img/transportador-7m.jpg",
       detalle: ["Sistema de transporte de 7 metros con altura regulable en un extremo, para cajas pesadas, diseñado para el rubro logístico."] },
-    { titulo: "Mesa de trabajo a medida", rubro: "Mesas", anio: "2025", dato: "EJEMPLO", imagen: "" },
-    { titulo: "Jig de sujeción para línea", rubro: "Utillaje", anio: "2024", dato: "EJEMPLO", imagen: "" },
+    { titulo: "Medio de traslado de piezas", rubro: "Transporte", anio: "", dato: "Estructura reforzada a medida", imagen: "img/medio-traslado.jpg" },
+    { titulo: "Dispositivo de sujeción con mordazas", rubro: "Utillaje", anio: "", dato: "Utillaje para línea de producción", imagen: "img/jig-mordazas.jpg" },
+    { titulo: "Hanger de izaje", rubro: "Utillaje", anio: "", dato: "Equipo de sujeción para izaje", imagen: "img/hanger-verde.jpg", posicion: "50% 65%" },
+    { titulo: "Dispositivo industrial a medida", rubro: "Utillaje", anio: "", dato: "Fabricado en taller propio", imagen: "img/dispositivo-celeste.jpg" },
+    { titulo: "Mesa transportadora con banda", rubro: "Mesas", anio: "", dato: "Mesa de trabajo con motorización", imagen: "img/mesa-banda.jpg" },
     { titulo: "Karakuri de alimentación por gravedad", rubro: "Karakuri", anio: "2024", dato: "EJEMPLO", imagen: "" }
   ],
 
@@ -95,7 +98,9 @@ window.SITE = {
       "Ingeniería orientada a fabricación",
       "Producción propia con control de calidad",
       "Comunicación directa con quien diseña y fabrica tu proyecto",
-      "Equipo ágil y enfocado, con foco 100 % en tu proyecto"
+      "Equipo ágil y enfocado, con foco 100 % en tu proyecto",
+      "Diseños ergonómicos que cuidan a tu equipo",
+      "Durabilidad garantizada, con materiales y procesos de alta calidad"
     ],
     sociosTitulo: "Socios fundadores"
   },
@@ -106,7 +111,7 @@ window.SITE = {
   ],
 
   contacto: {
-    titulo: "Contanos qué necesitás",
+    titulo: "¿Listo para llevar tu producción al siguiente nivel?",
     texto: "Describí brevemente el proyecto y te respondemos con los próximos pasos."
   },
 

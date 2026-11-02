@@ -251,3 +251,6 @@ a{color:inherit;text-decoration:none}
 .dlg-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
 .dlg h3{font-size:32px}
 .dlg-text{display:flex;flex-direction:column;gap:10px;color:var(--text-dim);max-width:70ch}
+.proj-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.proj-img img.fit-contain{object-fit:contain}
+.proj-img .tag{z-index:1}
