@@ -16,8 +16,7 @@
   };
   var RUBRO_ICON = { "Estanterías": "rack", "Escaleras": "stairs", "Elevadores": "lift", "Karakuri": "karakuri" };
 
-  // Marca y cabecera
-  document.title = S.marca.nombre + " · Estanterías, escaleras y karakuri";
+  // ---------- Marca y portada ----------
   $("brand-name").textContent = S.marca.nombre;
   $("foot-brand").textContent = S.marca.nombre + " · " + S.marca.ciudad;
   $("hero-eyebrow").textContent = S.hero.eyebrow;
@@ -30,12 +29,12 @@
   }).join("");
   if (S.preview) $("preview-band").hidden = false;
 
-  // Servicios
+  // ---------- Servicios ----------
   $("servicios-grid").innerHTML = S.servicios.map(function (s) {
     return '<article class="card"><div class="ico">' + icon(s.icono) + "</div><h3>" + esc(s.titulo) + "</h3><p>" + esc(s.texto) + "</p></article>";
   }).join("");
 
-  // Proyectos con filtro por rubro
+  // ---------- Proyectos con filtro ----------
   var rubros = ["Todos"].concat(S.proyectos.map(function (p) { return p.rubro; }).filter(function (r, i, a) { return a.indexOf(r) === i; }));
   var actual = "Todos";
   function pintarProyectos() {
@@ -43,9 +42,9 @@
       return '<button class="chip" type="button" data-r="' + esc(r) + '" aria-pressed="' + (r === actual) + '">' + esc(r) + "</button>";
     }).join("");
     $("proyectos-grid").innerHTML = S.proyectos.filter(function (p) { return actual === "Todos" || p.rubro === actual; }).map(function (p) {
-      var media = p.imagen ? '<img src="' + esc(p.imagen) + '" alt="' + esc(p.titulo) + '" loading="lazy">' : icon(RUBRO_ICON[p.rubro] || "layout");
+      var media = p.imagen ? '<img class="' + (p.ajuste === "contain" ? "fit-contain" : "") + '" src="' + esc(p.imagen) + '" alt="' + esc(p.titulo) + '" loading="lazy">' : icon(RUBRO_ICON[p.rubro] || "layout");
       return '<article class="proj"><div class="proj-img">' + media + '<span class="tag">' + esc(p.rubro) + '</span></div><div class="proj-body"><h3>' +
-        esc(p.titulo) + '</h3><div class="meta"><span class="dato">' + esc(p.dato) + "</span><span>" + esc(p.anio) + "</span></div></div></article>";
+        esc(p.titulo) + '</h3><div class="meta"><span class="dato">' + esc(p.dato) + "</span><span>" + esc(p.anio || "") + "</span></div></div></article>";
     }).join("");
   }
   $("filters").addEventListener("click", function (e) {
@@ -54,12 +53,12 @@
   });
   pintarProyectos();
 
-  // Proceso
+  // ---------- Proceso ----------
   $("proceso-list").innerHTML = S.proceso.map(function (p) {
     return "<li><h3>" + esc(p.titulo) + "</h3><p>" + esc(p.texto) + "</p></li>";
   }).join("");
 
-  // Perfil
+  // ---------- Perfil ----------
   $("about-title").textContent = S.sobreMi.titulo;
   $("about-text").innerHTML = S.sobreMi.parrafos.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("");
   $("about-tags").innerHTML = S.sobreMi.puntos.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
@@ -67,7 +66,7 @@
   $("pc-role").textContent = S.marca.cargo;
   $("pc-linkedin").href = S.marca.linkedin;
 
-  // Contacto
+  // ---------- Contacto ----------
   $("contact-title").textContent = S.contacto.titulo;
   $("contact-text").textContent = S.contacto.texto;
   $("contact-list").innerHTML =
@@ -82,18 +81,65 @@
     window.open("https://wa.me/" + S.marca.whatsapp + "?text=" + encodeURIComponent(txt), "_blank", "noopener");
   });
 
-  // Pie
+  // ---------- Pie ----------
   $("foot-credit").textContent = S.credito.texto;
   $("foot-tel").textContent = S.credito.telefono;
 
-  // Tema
+  // ---------- Navegación por secciones ----------
+  var menu = S.menu;
+  var ids = menu.map(function (m) { return m.id; });
+  var etiqueta = {}; menu.forEach(function (m) { etiqueta[m.id] = m.label; });
+
+  $("tabs").innerHTML = menu.map(function (m) {
+    return '<a href="#' + m.id + '" data-id="' + m.id + '">' + esc(m.label) + "</a>";
+  }).join("");
+
+  $("access-grid").innerHTML = menu.filter(function (m) { return m.id !== "inicio"; }).map(function (m) {
+    return '<a href="#' + m.id + '"><b>' + esc(m.label) + "</b><span>" + esc(m.desc) + "</span><i>Abrir →</i></a>";
+  }).join("");
+
+  // Botones Anterior / Inicio / Siguiente al pie de cada sección
+  ids.forEach(function (id, i) {
+    if (id === "inicio") return;
+    var prev = ids[i - 1], next = ids[i + 1];
+    var html = '<nav class="pager" aria-label="Navegación entre secciones">' +
+      '<a class="btn btn-ghost" href="#' + prev + '">← ' + esc(etiqueta[prev]) + "</a>" +
+      '<a class="btn btn-ghost mid" href="#inicio">Inicio</a>' +
+      (next ? '<a class="btn btn-primary" href="#' + next + '">' + esc(etiqueta[next]) + " →</a>" : '<a class="btn btn-primary" href="#inicio">Volver al inicio</a>') +
+      "</nav>";
+    $("v-" + id).querySelector(".wrap").insertAdjacentHTML("beforeend", html);
+  });
+
+  function ruta() {
+    var id = (location.hash || "").replace("#", "");
+    return ids.indexOf(id) >= 0 ? id : "inicio";
+  }
+  var primera = true;
+  function mostrar() {
+    var id = ruta();
+    Array.prototype.forEach.call(document.querySelectorAll(".view"), function (v) {
+      v.classList.toggle("active", v.id === "v-" + id);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#tabs a"), function (a) {
+      if (a.getAttribute("data-id") === id) {
+        a.setAttribute("aria-current", "page");
+        if (a.scrollIntoView) a.scrollIntoView({ block: "nearest", inline: "center" });
+      } else a.removeAttribute("aria-current");
+    });
+    document.title = (id === "inicio" ? S.marca.nombre : etiqueta[id] + " · " + S.marca.nombre);
+    window.scrollTo(0, 0);
+    if (!primera) $("v-" + id).focus({ preventScroll: true });
+    primera = false;
+  }
+  window.addEventListener("hashchange", mostrar);
+  mostrar();
+
+  // ---------- Tema (oscuro por defecto) ----------
   var root = document.documentElement;
   var t = null; try { t = localStorage.getItem("tema"); } catch (e) {}
   root.setAttribute("data-theme", t || "dark");
   $("theme-toggle").addEventListener("click", function () {
-    var oscuro = root.getAttribute("data-theme") === "dark" ||
-      (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
-    var n = oscuro ? "light" : "dark";
+    var n = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", n);
     try { localStorage.setItem("tema", n); } catch (e) {}
   });

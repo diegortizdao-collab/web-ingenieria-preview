@@ -29,6 +29,15 @@ window.SITE = {
     ]
   },
 
+  menu: [ // orden de las pestañas; "inicio" siempre va primero
+    { id: "inicio",    label: "Inicio",    desc: "" },
+    { id: "servicios", label: "Servicios", desc: "Estanterías, escaleras, elevadores y karakuri." },
+    { id: "proyectos", label: "Proyectos", desc: "Trabajos realizados, filtrados por rubro." },
+    { id: "proceso",   label: "Proceso",   desc: "De la visita a planta al montaje." },
+    { id: "perfil",    label: "Perfil",    desc: "Quién está detrás de cada proyecto." },
+    { id: "contacto",  label: "Contacto",  desc: "Contanos qué necesitás y te respondemos." }
+  ],
+
   servicios: [
     { icono: "rack",    titulo: "Estanterías industriales", texto: "Racks y estanterías a medida para piezas, matrices y materia prima, con carga calculada y señalización de capacidad." },
     { icono: "stairs",  titulo: "Escaleras y pasarelas", texto: "Escaleras, plataformas y barandas dimensionadas según norma, para acceder a máquinas y entrepisos con seguridad." },
@@ -38,13 +47,13 @@ window.SITE = {
     { icono: "check",   titulo: "Documentación técnica", texto: "Planos, memorias de cálculo y manuales de uso listos para auditorías de calidad y seguridad." }
   ],
 
-  proyectos: [ // EJEMPLO — reemplazar por fotos reales (carpeta /img)
-    { titulo: "Estantería de matrices", rubro: "Estanterías", anio: "2025", dato: "8 niveles · 2 t por nivel", imagen: "" },
+  proyectos: [ // Los dos primeros son reales (fotos/planos). Los demás son EJEMPLO.
+    { titulo: "Carro de transporte con soporte inclinado", rubro: "Herrería", anio: "", dato: "Plano con cotas 900 / 500 mm", imagen: "img/carro-plano.jpg", ajuste: "contain" },
+    { titulo: "Bastidor inclinado con soportes", rubro: "Estanterías", anio: "", dato: "Estructura en perfil tubular", imagen: "img/bastidor-inclinado.jpg" },
     { titulo: "Karakuri de alimentación por gravedad", rubro: "Karakuri", anio: "2025", dato: "Sin energía eléctrica", imagen: "" },
     { titulo: "Escalera con plataforma de servicio", rubro: "Escaleras", anio: "2024", dato: "Norma IRAM 4004", imagen: "" },
     { titulo: "Elevador de bobinas", rubro: "Elevadores", anio: "2024", dato: "Capacidad 500 kg", imagen: "" },
-    { titulo: "Estantería dinámica FIFO", rubro: "Estanterías", anio: "2024", dato: "−40 % de búsqueda", imagen: "" },
-    { titulo: "Karakuri de transferencia de caja", rubro: "Karakuri", anio: "2023", dato: "−1 operario por turno", imagen: "" }
+    { titulo: "Estantería dinámica FIFO", rubro: "Estanterías", anio: "2024", dato: "−40 % de búsqueda", imagen: "" }
   ],
 
   proceso: [

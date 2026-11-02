@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JM Soluciones de Ingeniería</title>
-<meta name="description" content="Ingeniería de procesos, estructuras metálicas y herrería de proyectos a escala para la industria.">
+<meta name="description" content="Estanterías, escaleras, elevadores y karakuri para la industria. Ingeniería de procesos y herrería de proyectos a escala.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -14,32 +14,30 @@
 <div id="preview-band" class="preview-band" hidden>Vista previa · el contenido es de ejemplo y se reemplaza por el definitivo</div>
 <div class="brand-rule"></div>
 
-<header class="hero-field" id="inicio">
-  <div class="wrap">
-    <nav class="topbar" aria-label="Principal">
-      <a class="brandmark" href="#inicio"><span class="mark" aria-hidden="true"></span><span id="brand-name"></span></a>
-      <div class="nav-links">
-        <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#perfil">Perfil</a>
-        <a href="#contacto" class="nav-cta">Contacto</a>
-        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Cambiar tema">◐</button>
-      </div>
-    </nav>
-    <div class="hero-main">
-      <div>
-        <p class="eyebrow" id="hero-eyebrow"></p>
-        <h1 id="hero-title"></h1>
-        <p class="hero-sub" id="hero-sub"></p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contacto" id="hero-cta1"></a>
-          <a class="btn btn-ghost" href="#proyectos" id="hero-cta2"></a>
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brandmark" href="#inicio"><span class="mark" aria-hidden="true"></span><span id="brand-name"></span></a>
+    <nav class="tabs" id="tabs" aria-label="Secciones"></nav>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Cambiar tema">◐</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="view active" id="v-inicio" tabindex="-1" aria-label="Inicio">
+    <div class="hero-field">
+      <div class="wrap hero-main">
+        <div>
+          <p class="eyebrow" id="hero-eyebrow"></p>
+          <h1 id="hero-title"></h1>
+          <p class="hero-sub" id="hero-sub"></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contacto" id="hero-cta1"></a>
+            <a class="btn btn-ghost" href="#proyectos" id="hero-cta2"></a>
+          </div>
+          <div class="stat-row" id="hero-stats"></div>
         </div>
-        <div class="stat-row" id="hero-stats"></div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <svg viewBox="0 0 420 340" class="blueprint">
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 420 340" class="blueprint">
           <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
             <path d="M40 300H380" opacity=".5"/>
             <path d="M90 300V50M330 300V50"/>
@@ -57,20 +55,25 @@
             <text x="376" y="180" transform="rotate(90 376 180)" text-anchor="middle">4.500 mm</text>
           </g>
         </svg>
+        </div>
       </div>
     </div>
-  </div>
-</header>
-
-<main>
-  <section class="section wrap" id="servicios">
-    <p class="eyebrow">Servicios</p>
-    <h2>Lo que resuelvo en planta</h2>
-    <div class="grid cards" id="servicios-grid"></div>
+    <div class="wrap home-links">
+      <p class="eyebrow">Explorar</p>
+      <div class="grid access" id="access-grid"></div>
+    </div>
   </section>
 
-  <section class="section band" id="proyectos">
-    <div class="wrap">
+  <section class="view" id="v-servicios" tabindex="-1" aria-label="Servicios">
+    <div class="wrap page">
+      <p class="eyebrow">Servicios</p>
+      <h2>Lo que resuelvo en planta</h2>
+      <div class="grid cards" id="servicios-grid"></div>
+    </div>
+  </section>
+
+  <section class="view" id="v-proyectos" tabindex="-1" aria-label="Proyectos">
+    <div class="wrap page">
       <p class="eyebrow">Proyectos</p>
       <h2>Trabajos recientes</h2>
       <div class="filters" id="filters" role="group" aria-label="Filtrar proyectos"></div>
@@ -78,14 +81,16 @@
     </div>
   </section>
 
-  <section class="section wrap" id="proceso">
-    <p class="eyebrow">Proceso</p>
-    <h2>Cómo trabajamos</h2>
-    <ol class="steps" id="proceso-list"></ol>
+  <section class="view" id="v-proceso" tabindex="-1" aria-label="Proceso">
+    <div class="wrap page">
+      <p class="eyebrow">Proceso</p>
+      <h2>Cómo trabajamos</h2>
+      <ol class="steps" id="proceso-list"></ol>
+    </div>
   </section>
 
-  <section class="section band" id="perfil">
-    <div class="wrap about">
+  <section class="view" id="v-perfil" tabindex="-1" aria-label="Perfil">
+    <div class="wrap page about">
       <div>
         <p class="eyebrow">Perfil</p>
         <h2 id="about-title"></h2>
@@ -101,8 +106,8 @@
     </div>
   </section>
 
-  <section class="section wrap" id="contacto">
-    <div class="contact">
+  <section class="view" id="v-contacto" tabindex="-1" aria-label="Contacto">
+    <div class="wrap page contact">
       <div>
         <p class="eyebrow">Contacto</p>
         <h2 id="contact-title"></h2>
