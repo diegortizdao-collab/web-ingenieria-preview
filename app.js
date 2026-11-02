@@ -19,6 +19,29 @@
   };
   var RUBRO_ICON = { "Estructuras": "frame", "Transporte": "conveyor", "Racks": "rack", "Mesas": "table", "Utillaje": "jig", "Karakuri": "karakuri" };
 
+  // ---------- Analítica (Google Analytics 4) ----------
+  var GA = S.analitica && S.analitica.ga4;
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.track = function (nombre, params) { if (GA) { try { gtag("event", nombre, params || {}); } catch (e) {} } };
+  if (GA) {
+    var gs = document.createElement("script");
+    gs.async = true; gs.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA);
+    document.head.appendChild(gs);
+    gtag("js", new Date());
+    gtag("config", GA, { send_page_view: false });
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href]"); if (!a) return;
+    var h = a.getAttribute("href") || "";
+    var donde = a.closest(".bot") ? "bot" : a.closest(".cta-bar") ? "barra_movil" : "pagina";
+    if (h.indexOf("wa.me") >= 0) window.track("click_whatsapp", { ubicacion: donde });
+    else if (h.indexOf("tel:") === 0) window.track("click_llamar", { ubicacion: donde });
+    else if (h.indexOf("mailto:") === 0) window.track("click_email", { ubicacion: donde });
+    else if (h.indexOf("linkedin.com") >= 0) window.track("click_linkedin", { ubicacion: donde });
+    else if (a.id === "hero-cta1") window.track("cta_portada", { boton: "solicitar_servicios" });
+  });
+
   // ---------- Marca y portada ----------
   $("brand-name").textContent = S.marca.nombre;
   $("foot-brand").textContent = S.marca.nombre + " · " + S.marca.ciudad;
@@ -87,6 +110,7 @@
     $("dlg-title").textContent = p.titulo;
     $("dlg-text").innerHTML = (p.detalle || []).map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("");
     if (imgs.length) ver(0);
+    window.track("ver_proyecto", { proyecto: p.titulo });
     dlg.showModal();
   }
   $("proyectos-grid").addEventListener("click", function (e) {
@@ -137,6 +161,7 @@
     if (!n || !m) { $("form-note").textContent = "Completá nombre y proyecto para continuar."; return; }
     var txt = "Hola, soy " + n + (em ? " de " + em : "") + ". " + m;
     $("form-note").textContent = "Abriendo WhatsApp…";
+    window.track("form_whatsapp_enviado");
     window.open("https://wa.me/" + S.marca.whatsapp + "?text=" + encodeURIComponent(txt), "_blank", "noopener");
   });
 
@@ -145,6 +170,7 @@
   $("cta-tel").href = "tel:+" + S.marca.whatsapp;
 
   // ---------- Pie ----------
+  if (GA && S.analitica.aviso) { var av = document.createElement("p"); av.className = "aviso"; av.textContent = S.analitica.aviso; document.querySelector(".footer .wrap").appendChild(av); }
   $("foot-credit").textContent = S.credito.texto;
   $("foot-tel").textContent = S.credito.telefono;
 
@@ -188,6 +214,7 @@
         if (a.scrollIntoView) a.scrollIntoView({ block: "nearest", inline: "center" });
       } else a.removeAttribute("aria-current");
     });
+    window.track("page_view", { page_title: (id === "inicio" ? "Inicio" : etiqueta[id]), page_location: location.href, page_path: "/" + (id === "inicio" ? "" : id) });
     document.title = (id === "inicio" ? S.marca.nombre + " · " + S.marca.subtitulo : etiqueta[id] + " · " + S.marca.nombre);
     window.scrollTo(0, 0);
     if (!primera) $("v-" + id).focus({ preventScroll: true });

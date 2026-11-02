@@ -126,9 +126,38 @@ window.SITE = {
       linkedin: "https://www.linkedin.com/company/jm-soluciones-de-ingenieria/people/" }  // reemplazar por el link personal
   ],
 
+  bot: { // Asistente guiado de consultas. Editá preguntas y opciones acá.
+    titulo: "Consultanos",
+    subtitulo: "Respondé unas preguntas y armamos tu consulta",
+    boton: "Consultá acá",
+    saludo: "Hola, soy el asistente de JM. Con unas preguntas armo tu consulta y vos la enviás por WhatsApp o email.",
+    cierre: "Listo, este es el resumen de tu consulta:",
+    nota: "Al enviarlo se abre WhatsApp o tu email con el mensaje ya armado. Este sitio no guarda el contenido de tu consulta.",
+    pasos: [
+      { etiqueta: "Necesito", pregunta: "¿Qué necesitás resolver?", tipo: "opciones",
+        opciones: ["Estantería o rack", "Escalera o pasarela", "Elevador o plataforma", "Karakuri", "Carro, cinta o transporte", "Jig, hanger o utillaje", "Mesa de trabajo", "Otra cosa"] },
+      { etiqueta: "Rubro", pregunta: "¿De qué rubro es tu empresa?", tipo: "opciones",
+        opciones: ["Manufactura industrial", "Automotriz y autopartes", "Alimentos y bebidas", "Logística y almacenes", "Otro rubro"] },
+      { etiqueta: "Detalle", pregunta: "Contame lo que sepas: medidas, carga a soportar, cómo lo resolvés hoy.", tipo: "texto",
+        opcional: true, omitir: "Todavía no lo sé", placeholder: "Ej.: 2 m de ancho, 500 kg por nivel" },
+      { etiqueta: "Plazo", pregunta: "¿Para cuándo lo necesitás?", tipo: "opciones",
+        opciones: ["Urgente (menos de 1 mes)", "Entre 1 y 3 meses", "Estoy evaluando opciones"] },
+      { etiqueta: "Nombre", pregunta: "¿Cómo te llamás?", tipo: "texto", placeholder: "Nombre y apellido" },
+      { etiqueta: "Empresa", pregunta: "¿De qué empresa sos?", tipo: "texto",
+        opcional: true, omitir: "Prefiero no decirlo", placeholder: "Nombre de la empresa" },
+      { etiqueta: "Contacto", pregunta: "¿Cómo te contactamos? Dejá un teléfono o un email.", tipo: "texto",
+        placeholder: "11 1234-5678 o nombre@empresa.com", minimo: 6 }
+    ]
+  },
+
   contacto: {
     titulo: "¿Listo para llevar tu producción al siguiente nivel?",
     texto: "Describí brevemente el proyecto y te respondemos con los próximos pasos."
+  },
+
+  analitica: { // Google Analytics 4. Pegá acá el ID de medición (G-XXXXXXXXXX). Vacío = no mide nada.
+    ga4: "",
+    aviso: "Medimos las visitas con Google Analytics para mejorar el sitio. No registramos el contenido de tus consultas."
   },
 
   credito: {
