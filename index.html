@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ingeniería de Procesos y Herrería de Proyectos</title>
+<meta name="description" content="Ingeniería de procesos, estructuras metálicas y herrería de proyectos a escala para la industria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="preview-band" class="preview-band" hidden>Vista previa · el contenido es de ejemplo y se reemplaza por el definitivo</div>
+<div class="brand-rule"></div>
+
+<header class="hero-field" id="inicio">
+  <div class="wrap">
+    <nav class="topbar" aria-label="Principal">
+      <a class="brandmark" href="#inicio"><span class="mark" aria-hidden="true"></span><span id="brand-name"></span></a>
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#perfil">Perfil</a>
+        <a href="#contacto" class="nav-cta">Contacto</a>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Cambiar tema">◐</button>
+      </div>
+    </nav>
+    <div class="hero-main">
+      <div>
+        <p class="eyebrow" id="hero-eyebrow"></p>
+        <h1 id="hero-title"></h1>
+        <p class="hero-sub" id="hero-sub"></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacto" id="hero-cta1"></a>
+          <a class="btn btn-ghost" href="#proyectos" id="hero-cta2"></a>
+        </div>
+        <div class="stat-row" id="hero-stats"></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 340" class="blueprint">
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <path d="M40 300H380" opacity=".5"/>
+            <path d="M90 300V50M330 300V50"/>
+            <path d="M90 110H330M90 190H330M90 270H330"/>
+            <path d="M90 50L330 110M330 50L90 110" opacity=".35"/>
+            <path d="M110 110V80H170V110M200 110V70H260V110M280 190V150H320V190M110 190V160H190V190M130 270V230H230V270" opacity=".75"/>
+          </g>
+          <g class="nodes"><circle cx="90" cy="50" r="6"/><circle cx="330" cy="50" r="6"/><circle cx="90" cy="300" r="6"/><circle cx="330" cy="300" r="6"/></g>
+          <g class="dims" font-family="IBM Plex Mono, monospace" font-size="12">
+            <path d="M90 322H330" stroke-width="1"/>
+            <path d="M90 316V328M330 316V328" stroke-width="1"/>
+            <text x="210" y="338" text-anchor="middle">2.400 mm</text>
+            <path d="M366 50V300" stroke-width="1"/>
+            <path d="M360 50H372M360 300H372" stroke-width="1"/>
+            <text x="376" y="180" transform="rotate(90 376 180)" text-anchor="middle">4.500 mm</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section wrap" id="servicios">
+    <p class="eyebrow">Servicios</p>
+    <h2>Lo que resuelvo en planta</h2>
+    <div class="grid cards" id="servicios-grid"></div>
+  </section>
+
+  <section class="section band" id="proyectos">
+    <div class="wrap">
+      <p class="eyebrow">Proyectos</p>
+      <h2>Trabajos recientes</h2>
+      <div class="filters" id="filters" role="group" aria-label="Filtrar proyectos"></div>
+      <div class="grid projects" id="proyectos-grid"></div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="proceso">
+    <p class="eyebrow">Proceso</p>
+    <h2>Cómo trabajamos</h2>
+    <ol class="steps" id="proceso-list"></ol>
+  </section>
+
+  <section class="section band" id="perfil">
+    <div class="wrap about">
+      <div>
+        <p class="eyebrow">Perfil</p>
+        <h2 id="about-title"></h2>
+        <div id="about-text" class="about-text"></div>
+        <ul class="tags" id="about-tags"></ul>
+      </div>
+      <aside class="profile-card">
+        <div class="avatar" aria-hidden="true"></div>
+        <p class="pc-name" id="pc-name"></p>
+        <p class="pc-role" id="pc-role"></p>
+        <a class="btn btn-ghost" id="pc-linkedin" href="#" target="_blank" rel="noopener">Ver perfil en LinkedIn</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section wrap" id="contacto">
+    <div class="contact">
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <h2 id="contact-title"></h2>
+        <p class="lead" id="contact-text"></p>
+        <ul class="contact-list" id="contact-list"></ul>
+      </div>
+      <form id="contact-form" class="form" novalidate>
+        <label for="f-nombre">Nombre</label>
+        <input id="f-nombre" name="nombre" autocomplete="name" required>
+        <label for="f-empresa">Empresa</label>
+        <input id="f-empresa" name="empresa" autocomplete="organization">
+        <label for="f-msg">Proyecto</label>
+        <textarea id="f-msg" name="msg" rows="4" required></textarea>
+        <button class="btn btn-primary" type="submit">Enviar por WhatsApp</button>
+        <p class="form-note" id="form-note" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <span id="foot-brand"></span>
+    <span class="credit"><span id="foot-credit"></span> · <span id="foot-tel"></span></span>
+  </div>
+</footer>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
